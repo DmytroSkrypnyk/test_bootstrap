@@ -105,7 +105,8 @@
     "webpack-manifest-plugin": "1.2.1",
     "webpack-split-chunks": "^0.2.1",
     "whatwg-fetch": "2.0.3",
-    "window-resize-listener-react": "^1.1.0"
+    "window-resize-listener-react": "^1.1.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "animate-sass": "^0.8.2",
@@ -118,7 +119,9 @@
     "build": "cross-env NODE_PATH=./src node scripts/build.js",
     "test": "cross-env NODE_PATH=./src node scripts/test.js --env=jsdom",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -160,5 +163,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "snyk": true
 }
